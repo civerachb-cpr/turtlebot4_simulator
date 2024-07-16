@@ -23,9 +23,9 @@
 #include <iostream>
 #include <vector>
 
-#include <ignition/plugin/Register.hh>
-#include <ignition/gui/Application.hh>
-#include <ignition/gui/MainWindow.hh>
+#include <gz/plugin/Register.hh>
+#include <gz/gui/Application.hh>
+#include <gz/gui/MainWindow.hh>
 
 using ignition::gui::Turtlebot4Hmi;
 
