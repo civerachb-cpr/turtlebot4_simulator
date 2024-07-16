@@ -16,13 +16,13 @@
  * @author Roni Kreinin (rkreinin@clearpathrobotics.com)
  */
 
-#include "turtlebot4_ignition_toolbox/hmi_node.hpp"
+#include "turtlebot4_gz_toolbox/hmi_node.hpp"
 #include <memory>
 
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<turtlebot4_ignition_toolbox::Hmi>());
+  rclcpp::spin(std::make_shared<turtlebot4_gz_toolbox::Hmi>());
   rclcpp::shutdown();
   return 0;
 }

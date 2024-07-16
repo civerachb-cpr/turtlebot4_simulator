@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>turtlebot4_ignition_bringup</name>
+  <name>turtlebot4_gz_bringup</name>
   <version>1.0.2</version>
   <description>TurtleBot 4 Ignition Simulator bringup</description>
   <maintainer email="rkreinin@clearpathrobotics.com">rkreinin</maintainer>
@@ -15,8 +15,8 @@
   <depend>turtlebot4_navigation</depend>
   <depend>turtlebot4_node</depend>
   <depend>turtlebot4_viz</depend>
-  <depend>turtlebot4_ignition_gui_plugins</depend>
-  <depend>turtlebot4_ignition_toolbox</depend>
+  <depend>turtlebot4_gz_gui_plugins</depend>
+  <depend>turtlebot4_gz_toolbox</depend>
 
   <!-- Create3 -->
   <depend>irobot_create_description</depend>
@@ -27,9 +27,9 @@
   <depend>irobot_create_ignition_toolbox</depend>
 
   <!-- ROS IGN -->
-  <depend>ros_ign_interfaces</depend>
-  <depend>ros_ign_gazebo</depend>
-  <depend>ros_ign_bridge</depend>
+  <depend>ros_gz_interfaces</depend>
+  <depend>ros_gz_sim</depend>
+  <!--<depend>ros_ign_bridge</depend>-->
 
   <!-- Messages -->
   <depend>std_msgs</depend>

@@ -3,15 +3,15 @@
 <package format="3">
   <name>turtlebot4_simulator</name>
   <version>1.0.2</version>
-  <description>TODO: Package description</description>
+  <description>Metapackage for Turtlebot4 simulations</description>
   <maintainer email="rkreinin@clearpathrobotics.com">rkreinin</maintainer>
   <license>Apache 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <depend>turtlebot4_ignition_bringup</depend>
-  <depend>turtlebot4_ignition_gui_plugins</depend>
-  <depend>turtlebot4_ignition_toolbox</depend>
+  <depend>turtlebot4_gz_bringup</depend>
+  <depend>turtlebot4_gz_gui_plugins</depend>
+  <depend>turtlebot4_gz_toolbox</depend>
 
   <export>
     <build_type>ament_cmake</build_type>

@@ -32,13 +32,13 @@ ARGUMENTS = [
 def generate_launch_description():
 
     # Directories
-    pkg_turtlebot4_ignition_bringup = get_package_share_directory('turtlebot4_ignition_bringup')
+    pkg_turtlebot4_gz_bringup = get_package_share_directory('turtlebot4_gz_bringup')
 
     # Parameters
     param_file_cmd = DeclareLaunchArgument(
         'param_file',
         default_value=PathJoinSubstitution(
-            [pkg_turtlebot4_ignition_bringup, 'config', 'turtlebot4_node.yaml']),
+            [pkg_turtlebot4_gz_bringup, 'config', 'turtlebot4_node.yaml']),
         description='Turtlebot4 Robot param file'
     )
 
@@ -55,10 +55,10 @@ def generate_launch_description():
     )
 
     # Turtlebot4 Ignition Hmi node
-    turtlebot4_ignition_hmi_node = Node(
-        package='turtlebot4_ignition_toolbox',
-        name='turtlebot4_ignition_hmi_node',
-        executable='turtlebot4_ignition_hmi_node',
+    turtlebot4_gz_hmi_node = Node(
+        package='turtlebot4_gz_toolbox',
+        name='turtlebot4_gz_hmi_node',
+        executable='turtlebot4_gz_hmi_node',
         output='screen',
         condition=LaunchConfigurationEquals('model', 'standard')
     )
@@ -67,5 +67,5 @@ def generate_launch_description():
     ld = LaunchDescription(ARGUMENTS)
     ld.add_action(param_file_cmd)
     ld.add_action(turtlebot4_node)
-    ld.add_action(turtlebot4_ignition_hmi_node)
+    ld.add_action(turtlebot4_gz_hmi_node)
     return ld

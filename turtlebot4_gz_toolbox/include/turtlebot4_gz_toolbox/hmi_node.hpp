@@ -16,8 +16,8 @@
  * @author Roni Kreinin (rkreinin@clearpathrobotics.com)
  */
 
-#ifndef TURTLEBOT4_IGNITION_TOOLBOX__HMI_NODE_HPP_
-#define TURTLEBOT4_IGNITION_TOOLBOX__HMI_NODE_HPP_
+#ifndef TURTLEBOT4_GZ_TOOLBOX__HMI_NODE_HPP_
+#define TURTLEBOT4_GZ_TOOLBOX__HMI_NODE_HPP_
 
 #include <string>
 
@@ -28,7 +28,7 @@
 #include "turtlebot4_msgs/msg/user_button.hpp"
 #include "turtlebot4_msgs/msg/user_display.hpp"
 
-namespace turtlebot4_ignition_toolbox
+namespace turtlebot4_gz_toolbox
 {
 
 static constexpr auto DISPLAY_CHAR_PER_LINE_HEADER = 21;
@@ -52,6 +52,6 @@ private:
   rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr button_subscriber_;
 };
 
-}  // namespace turtlebot4_ignition_toolbox
+}  // namespace turtlebot4_gz_toolbox
 
-#endif  // TURTLEBOT4_IGNITION_TOOLBOX__HMI_NODE_HPP_
+#endif  // TURTLEBOT4_GZ_TOOLBOX__HMI_NODE_HPP_

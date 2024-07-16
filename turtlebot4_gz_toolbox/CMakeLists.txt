@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(turtlebot4_ignition_toolbox)
+project(turtlebot4_gz_toolbox)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -48,7 +48,7 @@ target_link_libraries(${PROJECT_NAME}_lib ${GPIOD_LIBRARY})
 
 ament_target_dependencies(${PROJECT_NAME}_lib ${DEPENDENCIES})
 
-set(EXECUTABLE_NAME "turtlebot4_ignition_hmi_node")
+set(EXECUTABLE_NAME "turtlebot4_gz_hmi_node")
 
 add_executable(${EXECUTABLE_NAME} src/hmi_main.cpp)
 target_link_libraries(${EXECUTABLE_NAME} ${PROJECT_NAME}_lib)

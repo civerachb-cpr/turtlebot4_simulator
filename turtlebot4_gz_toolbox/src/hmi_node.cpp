@@ -20,9 +20,9 @@
 #include <utility>
 #include <memory>
 
-#include "turtlebot4_ignition_toolbox/hmi_node.hpp"
+#include "turtlebot4_gz_toolbox/hmi_node.hpp"
 
-using turtlebot4_ignition_toolbox::Hmi;
+using turtlebot4_gz_toolbox::Hmi;
 
 Hmi::Hmi()
 : rclcpp::Node("hmi_node")
