@@ -20,6 +20,7 @@
 #define TURTLEBOT4_GZ_GUI_PLUGINS__TURTLEBOT4HMI__TURTLEBOT4HMI_HH_
 
 #include <gz/gui/qt.h>
+#include <gz/msgs.hh>
 
 #include <string>
 
