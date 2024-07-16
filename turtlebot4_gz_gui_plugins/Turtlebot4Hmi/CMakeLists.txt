@@ -17,16 +17,16 @@ find_package(Qt5
 )
 
 # Find the Ignition gui library
-find_package(ignition-gui6 REQUIRED)
-find_package(ignition-common4 REQUIRED)
+find_package(gz-gui8 REQUIRED)
+find_package(gz-common5 REQUIRED)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${IGNITION-GUI_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GZ-GUI_CXX_FLAGS}")
 
 qt5_add_resources(resources_rcc Turtlebot4Hmi.qrc)
 
 include_directories(SYSTEM
-  ${IGNITION-COMMON_INCLUDE_DIRS}
-  ${IGNITION-GUI_INCLUDE_DIRS}
+  ${GZ-COMMON_INCLUDE_DIRS}
+  ${GZ-GUI_INCLUDE_DIRS}
   ${Qt5Core_INCLUDE_DIRS}
   ${Qt5Qml_INCLUDE_DIRS}
   ${Qt5Quick_INCLUDE_DIRS}
@@ -34,8 +34,8 @@ include_directories(SYSTEM
 )
 
 link_directories(
-  ${IGNITION-COMMON_LIBRARY_DIRS}
-  ${IGNITION-GUI_LIBRARY_DIRS}
+  ${GZ-COMMON_LIBRARY_DIRS}
+  ${GZ-GUI_LIBRARY_DIRS}
 )
 
 # Generate examples
@@ -44,7 +44,7 @@ Turtlebot4Hmi.cc
   ${resources_rcc}
 )
 target_link_libraries(Turtlebot4Hmi
-  ${IGNITION-GUI_LIBRARIES}
+  ${GZ-GUI_LIBRARIES}
   ${Qt5Core_LIBRARIES}
   ${Qt5Qml_LIBRARIES}
   ${Qt5Quick_LIBRARIES}

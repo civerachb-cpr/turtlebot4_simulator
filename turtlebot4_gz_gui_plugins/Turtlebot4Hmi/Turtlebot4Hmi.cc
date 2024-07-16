@@ -379,6 +379,6 @@ void Turtlebot4Hmi::OnAddMsg(QString msg)
 }
 
 // Register this plugin
-IGNITION_ADD_PLUGIN(
+GZ_ADD_PLUGIN(
   ignition::gui::Turtlebot4Hmi,
   ignition::gui::Plugin)

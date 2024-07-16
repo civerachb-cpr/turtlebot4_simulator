@@ -16,15 +16,15 @@
  * @author Roni Kreinin (rkreinin@clearpathrobotics.com)
  */
 
-#ifndef TURTLEBOT4_IGNITION_GUI_PLUGINS__TURTLEBOT4HMI__TURTLEBOT4HMI_HH_
-#define TURTLEBOT4_IGNITION_GUI_PLUGINS__TURTLEBOT4HMI__TURTLEBOT4HMI_HH_
+#ifndef TURTLEBOT4_GZ_GUI_PLUGINS__TURTLEBOT4HMI__TURTLEBOT4HMI_HH_
+#define TURTLEBOT4_GZ_GUI_PLUGINS__TURTLEBOT4HMI__TURTLEBOT4HMI_HH_
 
-#include <ignition/gui/qt.h>
+#include <gz/gui/qt.h>
 
 #include <string>
 
-#include <ignition/transport/Node.hh>
-#include <ignition/gui/Plugin.hh>
+#include <gz/transport/Node.hh>
+#include <gz/gui/Plugin.hh>
 
 namespace ignition
 {
@@ -135,4 +135,4 @@ private:
 
 }  // namespace ignition
 
-#endif  // TURTLEBOT4_IGNITION_GUI_PLUGINS__TURTLEBOT4HMI__TURTLEBOT4HMI_HH_
+#endif  // TURTLEBOT4_GZ_GUI_PLUGINS__TURTLEBOT4HMI__TURTLEBOT4HMI_HH_
