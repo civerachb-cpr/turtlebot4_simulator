@@ -18,6 +18,7 @@ from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
+from launch.conditions import IfCondition
 from launch.substitutions import EqualsSubstitution, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 
@@ -59,7 +60,7 @@ def generate_launch_description():
         name='turtlebot4_gz_hmi_node',
         executable='turtlebot4_gz_hmi_node',
         output='screen',
-        condition=EqualsSubstitution(LaunchConfiguration('model'), 'standard')
+        condition=IfCondition(EqualsSubstitution(LaunchConfiguration('model'), 'standard'))
     )
 
     # Define LaunchDescription variable
