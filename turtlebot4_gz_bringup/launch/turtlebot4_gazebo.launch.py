@@ -29,7 +29,7 @@ ARGUMENTS = [
     DeclareLaunchArgument('rviz', default_value='false',
                           choices=['true', 'false'], description='Start rviz.'),
     DeclareLaunchArgument('world', default_value='warehouse',
-                          description='Ignition World'),
+                          description='Simulation World'),
     DeclareLaunchArgument('model', default_value='standard',
                           choices=['standard', 'lite'],
                           description='Turtlebot4 Model'),
@@ -46,13 +46,13 @@ def generate_launch_description():
         'turtlebot4_gz_bringup')
 
     # Paths
-    ignition_launch = PathJoinSubstitution(
+    gazebo_launch = PathJoinSubstitution(
         [pkg_turtlebot4_gz_bringup, 'launch', 'gazebo.launch.py'])
     robot_spawn_launch = PathJoinSubstitution(
         [pkg_turtlebot4_gz_bringup, 'launch', 'turtlebot4_spawn.launch.py'])
 
-    ignition = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([ignition_launch]),
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([gazebo_launch]),
         launch_arguments=[
             ('world', LaunchConfiguration('world'))
         ]
@@ -71,6 +71,6 @@ def generate_launch_description():
 
     # Create launch description and add actions
     ld = LaunchDescription(ARGUMENTS)
-    ld.add_action(ignition)
+    ld.add_action(gazebo)
     ld.add_action(robot_spawn)
     return ld
