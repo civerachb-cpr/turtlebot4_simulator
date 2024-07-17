@@ -18,7 +18,7 @@ from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
-from launch.conditions import LaunchConfigurationEquals
+from launch.conditions import EqualsSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions.path_join_substitution import PathJoinSubstitution
@@ -119,7 +119,7 @@ def generate_launch_description():
             ([namespace, '/hmi/display/selected'],
              'hmi/display/_selected')
         ],
-        condition=LaunchConfigurationEquals('model', 'standard'))
+        condition=EqualsSubstitution(LaunchConfiguration('model'), 'standard'))
 
     # Buttons message bridge
     hmi_buttons_msg_bridge = Node(
@@ -137,7 +137,7 @@ def generate_launch_description():
             ([namespace, '/hmi/buttons'],
              'hmi/buttons/_set')
         ],
-        condition=LaunchConfigurationEquals('model', 'standard'))
+        condition=EqualsSubstitution(LaunchConfiguration('model'), 'standard'))
 
     # Buttons message bridge
     hmi_led_msg_bridge = Node(
@@ -155,7 +155,7 @@ def generate_launch_description():
             ([namespace, '/hmi/led/' + led],
              'hmi/led/_' + led) for led in leds
         ],
-        condition=LaunchConfigurationEquals('model', 'standard'))
+        condition=EqualsSubstitution(LaunchConfiguration('model'), 'standard'))
 
     # Camera sensor bridge
     oakd_camera_bridge = Node(
