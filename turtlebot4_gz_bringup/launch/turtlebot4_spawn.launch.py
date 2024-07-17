@@ -70,8 +70,8 @@ def generate_launch_description():
         'turtlebot4_navigation')
     pkg_irobot_create_common_bringup = get_package_share_directory(
         'irobot_create_common_bringup')
-    pkg_irobot_create_ignition_bringup = get_package_share_directory(
-        'irobot_create_ignition_bringup')
+    pkg_irobot_create_gz_bringup = get_package_share_directory(
+        'irobot_create_gz_bringup')
 
     # Paths
     turtlebot4_ros_ign_bridge_launch = PathJoinSubstitution(
@@ -83,7 +83,7 @@ def generate_launch_description():
     create3_nodes_launch = PathJoinSubstitution(
         [pkg_irobot_create_common_bringup, 'launch', 'create3_nodes.launch.py'])
     create3_ignition_nodes_launch = PathJoinSubstitution(
-        [pkg_irobot_create_ignition_bringup, 'launch', 'create3_ignition_nodes.launch.py'])
+        [pkg_irobot_create_gz_bringup, 'launch', 'create3_ignition_nodes.launch.py'])
     robot_description_launch = PathJoinSubstitution(
         [pkg_turtlebot4_description, 'launch', 'robot_description.launch.py'])
     dock_description_launch = PathJoinSubstitution(

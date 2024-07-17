@@ -60,11 +60,11 @@ def generate_launch_description():
         'user2'
     ]
 
-    pkg_irobot_create_ignition_bringup = get_package_share_directory(
-        'irobot_create_ignition_bringup')
+    pkg_irobot_create_gz_bringup = get_package_share_directory(
+        'irobot_create_gz_bringup')
 
     create3_ros_gz_bridge_launch = PathJoinSubstitution(
-        [pkg_irobot_create_ignition_bringup, 'launch', 'create3_ros_ignition_bridge.launch.py'])
+        [pkg_irobot_create_gz_bringup, 'launch', 'create3_ros_ignition_bridge.launch.py'])
 
     create3_bridge = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([create3_ros_gz_bridge_launch]),

@@ -51,10 +51,10 @@ def generate_launch_description():
         'turtlebot4_description')
     pkg_irobot_create_description = get_package_share_directory(
         'irobot_create_description')
-    pkg_irobot_create_ignition_bringup = get_package_share_directory(
-        'irobot_create_ignition_bringup')
-    pkg_irobot_create_ignition_plugins = get_package_share_directory(
-        'irobot_create_ignition_plugins')
+    pkg_irobot_create_gz_bringup = get_package_share_directory(
+        'irobot_create_gz_bringup')
+    pkg_irobot_create_gz_plugins = get_package_share_directory(
+        'irobot_create_gz_plugins')
     pkg_ros_gz_sim = get_package_share_directory(
         'ros_gz_sim')
 
@@ -63,7 +63,7 @@ def generate_launch_description():
         name='GZ_GAZEBO_RESOURCE_PATH',
         value=[
             os.path.join(pkg_turtlebot4_gz_bringup, 'worlds'), ':' +
-            os.path.join(pkg_irobot_create_ignition_bringup, 'worlds'), ':' +
+            os.path.join(pkg_irobot_create_gz_bringup, 'worlds'), ':' +
             str(Path(pkg_turtlebot4_description).parent.resolve()), ':' +
             str(Path(pkg_irobot_create_description).parent.resolve())])
 
@@ -71,7 +71,7 @@ def generate_launch_description():
         name='GZ_GUI_PLUGIN_PATH',
         value=[
             os.path.join(pkg_turtlebot4_gz_gui_plugins, 'lib'), ':' +
-            os.path.join(pkg_irobot_create_ignition_plugins, 'lib')])
+            os.path.join(pkg_irobot_create_gz_plugins, 'lib')])
 
     # Paths
     gz_sim_launch = PathJoinSubstitution(
