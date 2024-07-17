@@ -138,7 +138,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([dock_description_launch]),
             # The robot starts docked
-            launch_arguments={'gazebo': 'harmonic'}.items(),
+            launch_arguments={'gazebo': 'ignition'}.items(),
         ),
 
         # Spawn TurtleBot 4
