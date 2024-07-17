@@ -74,16 +74,16 @@ def generate_launch_description():
         'irobot_create_gz_bringup')
 
     # Paths
-    turtlebot4_ros_ign_bridge_launch = PathJoinSubstitution(
-        [pkg_turtlebot4_gz_bringup, 'launch', 'ros_ign_bridge.launch.py'])
+    turtlebot4_ros_gz_bridge_launch = PathJoinSubstitution(
+        [pkg_turtlebot4_gz_bringup, 'launch', 'ros_gz_bridge.launch.py'])
     rviz_launch = PathJoinSubstitution(
         [pkg_turtlebot4_viz, 'launch', 'view_robot.launch.py'])
     turtlebot4_node_launch = PathJoinSubstitution(
         [pkg_turtlebot4_gz_bringup, 'launch', 'turtlebot4_nodes.launch.py'])
     create3_nodes_launch = PathJoinSubstitution(
         [pkg_irobot_create_common_bringup, 'launch', 'create3_nodes.launch.py'])
-    create3_ignition_nodes_launch = PathJoinSubstitution(
-        [pkg_irobot_create_gz_bringup, 'launch', 'create3_ignition_nodes.launch.py'])
+    create3_gz_nodes_launch = PathJoinSubstitution(
+        [pkg_irobot_create_gz_bringup, 'launch', 'create3_gz_nodes.launch.py'])
     robot_description_launch = PathJoinSubstitution(
         [pkg_turtlebot4_description, 'launch', 'robot_description.launch.py'])
     dock_description_launch = PathJoinSubstitution(
@@ -138,7 +138,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([dock_description_launch]),
             # The robot starts docked
-            launch_arguments={'gazebo': 'ignition'}.items(),
+            launch_arguments={'gazebo': 'harmonic'}.items(),
         ),
 
         # Spawn TurtleBot 4
@@ -169,7 +169,7 @@ def generate_launch_description():
 
         # ROS IGN bridge
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([turtlebot4_ros_ign_bridge_launch]),
+            PythonLaunchDescriptionSource([turtlebot4_ros_gz_bridge_launch]),
             launch_arguments=[
                 ('model', LaunchConfiguration('model')),
                 ('robot_name', robot_name),
@@ -194,7 +194,7 @@ def generate_launch_description():
 
         # Create 3 Ignition nodes
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([create3_ignition_nodes_launch]),
+            PythonLaunchDescriptionSource([create3_gz_nodes_launch]),
             launch_arguments=[
                 ('robot_name', robot_name),
                 ('dock_name', dock_name),
