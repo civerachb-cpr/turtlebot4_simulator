@@ -60,7 +60,7 @@ def generate_launch_description():
 
     # Set ignition resource path
     gz_resource_path = SetEnvironmentVariable(
-        name='GZ_GAZEBO_RESOURCE_PATH',
+        name='GZ_SIM_RESOURCE_PATH',
         value=[
             os.path.join(pkg_turtlebot4_gz_bringup, 'worlds'), ':' +
             os.path.join(pkg_irobot_create_gz_bringup, 'worlds'), ':' +

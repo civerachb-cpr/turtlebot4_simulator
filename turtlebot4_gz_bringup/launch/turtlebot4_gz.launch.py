@@ -47,7 +47,7 @@ def generate_launch_description():
 
     # Paths
     gazebo_launch = PathJoinSubstitution(
-        [pkg_turtlebot4_gz_bringup, 'launch', 'gazebo.launch.py'])
+        [pkg_turtlebot4_gz_bringup, 'launch', 'sim.launch.py'])
     robot_spawn_launch = PathJoinSubstitution(
         [pkg_turtlebot4_gz_bringup, 'launch', 'turtlebot4_spawn.launch.py'])
 
