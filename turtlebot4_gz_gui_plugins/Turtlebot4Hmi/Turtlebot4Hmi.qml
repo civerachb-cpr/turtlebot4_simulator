@@ -361,7 +361,7 @@ Rectangle
       id: headerBox
       height: 30
       width: 250
-      color: "transparent"
+      color: "black"
       border.color: "black"
       border.width: 2
       anchors.horizontalCenter: hmiRectangle.horizontalCenter
@@ -369,9 +369,18 @@ Rectangle
       anchors.topMargin: 0
     }
 
+    Label
+    {
+      id: headerLabel
+      anchors.horizontalCenter: headerBox.horizontalCenter
+      anchors.verticalCenter: headerBox.verticalCenter
+      text: qsTr("Actions")
+      color: "white"
+    }
+
     Button {
       id: hmiButton1
-      text: qsTr("1")
+      text: qsTr("Run")
       highlighted: false
       onPressed: { Turtlebot4Hmi.OnHmiButton(1); }
       onReleased: { Turtlebot4Hmi.OnHmiButton(0); }
@@ -393,7 +402,7 @@ Rectangle
 
     Button {
       id: hmiButton2
-      text: qsTr("2")
+      text: qsTr("Top")
       highlighted: false
       onPressed: { Turtlebot4Hmi.OnHmiButton(2); }
       onReleased: { Turtlebot4Hmi.OnHmiButton(0); }
@@ -415,7 +424,7 @@ Rectangle
 
     Button {
       id: hmiButton3
-      text: qsTr("3")
+      text: qsTr("^")
       highlighted: false
       onPressed: { Turtlebot4Hmi.OnHmiButton(3); }
       onReleased: { Turtlebot4Hmi.OnHmiButton(0); }
@@ -437,7 +446,7 @@ Rectangle
 
     Button {
       id: hmiButton4
-      text: qsTr("4")
+      text: qsTr("v")
       highlighted: false
       onPressed: { Turtlebot4Hmi.OnHmiButton(4); }
       onReleased: { Turtlebot4Hmi.OnHmiButton(0); }

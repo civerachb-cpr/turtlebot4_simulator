@@ -112,7 +112,7 @@ void Turtlebot4Hmi::SetNamespace(const QString &_name)
 {
   this->namespace_ = _name.toStdString();
 
-  ignmsg << "A new robot namespace has been entered: '" <<
+  gzmsg << "A new robot namespace has been entered: '" <<
       this->namespace_ << " ' " <<std::endl;
 
   // Remove existing pub/subs
@@ -145,7 +145,7 @@ void Turtlebot4Hmi::OnHmiButton(const int button)
   button_msg.set_data(button);
 
   if (!this->hmi_button_pub_.Publish(button_msg)) {
-    ignerr << "gz::msgs::Int32 message couldn't be published at topic: " <<
+    gzerr << "gz::msgs::Int32 message couldn't be published at topic: " <<
       this->hmi_button_topic_ << std::endl;
   }
 }
@@ -157,7 +157,7 @@ void Turtlebot4Hmi::OnCreate3Button(const int button)
   button_msg.set_data(button);
 
   if (!this->create3_button_pub_.Publish(button_msg)) {
-    ignerr << "gz::msgs::Int32 message couldn't be published at topic: " <<
+    gzerr << "gz::msgs::Int32 message couldn't be published at topic: " <<
       this->create3_button_topic_ << std::endl;
   }
 }
