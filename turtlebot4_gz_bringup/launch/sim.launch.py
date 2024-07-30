@@ -58,20 +58,24 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory(
         'ros_gz_sim')
 
-    # Set ignition resource path
+     # Set Ignition resource path
     gz_resource_path = SetEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
-        value=[
-            os.path.join(pkg_turtlebot4_gz_bringup, 'worlds'), ':' +
-            os.path.join(pkg_irobot_create_gz_bringup, 'worlds'), ':' +
-            str(Path(pkg_turtlebot4_description).parent.resolve()), ':' +
-            str(Path(pkg_irobot_create_description).parent.resolve())])
+        value=':'.join([
+            os.path.join(pkg_turtlebot4_gz_bringup, 'worlds'),
+            os.path.join(pkg_irobot_create_gz_bringup, 'worlds'),
+            str(Path(pkg_turtlebot4_description).parent.resolve()),
+            str(Path(pkg_irobot_create_description).parent.resolve())
+        ])
+    )
 
     gz_gui_plugin_path = SetEnvironmentVariable(
         name='GZ_GUI_PLUGIN_PATH',
-        value=[
-            os.path.join(pkg_turtlebot4_gz_gui_plugins, 'lib'), ':' +
-            os.path.join(pkg_irobot_create_gz_plugins, 'lib')])
+        value=":".join([
+            os.path.join(pkg_turtlebot4_gz_gui_plugins, 'lib'),
+            os.path.join(pkg_irobot_create_gz_plugins, 'lib')
+        ])
+    )
 
     # Paths
     gz_sim_launch = PathJoinSubstitution(
@@ -94,18 +98,17 @@ def generate_launch_description():
     )
 
     # Clock bridge
-    # TODO No longer needed in Jazzy?
-#    clock_bridge = Node(package='ros_gz_bridge', executable='parameter_bridge',
-#                        name='clock_bridge',
-#                        output='screen',
-#                        arguments=[
-#                            '/clock' + '@rosgraph_msgs/msg/Clock' + '[ignition.msgs.Clock'
-#                        ])
+    clock_bridge = Node(package='ros_gz_bridge', executable='parameter_bridge',
+                        name='clock_bridge',
+                        output='screen',
+                        arguments=[
+                            '/clock' + '@rosgraph_msgs/msg/Clock' + '[ignition.msgs.Clock'
+                        ])
 
     # Create launch description and add actions
     ld = LaunchDescription(ARGUMENTS)
     ld.add_action(gz_resource_path)
     ld.add_action(gz_gui_plugin_path)
     ld.add_action(gazebo)
-#    ld.add_action(clock_bridge)
+    ld.add_action(clock_bridge)
     return ld
