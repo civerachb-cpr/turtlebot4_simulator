@@ -30,9 +30,9 @@ ARGUMENTS = [
                           choices=['true', 'false'],
                           description='Use sim time'),
     DeclareLaunchArgument('robot_name', default_value='turtlebot4',
-                          description='Ignition model name'),
+                          description='Gazebo model name'),
     DeclareLaunchArgument('dock_name', default_value='standard_dock',
-                          description='Ignition model name'),
+                          description='Gazebo model name'),
     DeclareLaunchArgument('namespace', default_value='',
                           description='Robot namespace'),
     DeclareLaunchArgument('world', default_value='warehouse',
@@ -89,7 +89,7 @@ def generate_launch_description():
             ['/world/', world,
              '/model/', robot_name,
              '/link/rplidar_link/sensor/rplidar/scan' +
-             '@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan']
+             '@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan']
         ],
         remappings=[
             (['/world/', world,
@@ -108,10 +108,10 @@ def generate_launch_description():
         arguments=[
             [namespace, '/hmi/display/raw' +
              '@std_msgs/msg/String' +
-             ']ignition.msgs.StringMsg'],
+             ']gz.msgs.StringMsg'],
             [namespace, '/hmi/display/selected' +
              '@std_msgs/msg/Int32' +
-             ']ignition.msgs.Int32']
+             ']gz.msgs.Int32']
         ],
         remappings=[
             ([namespace, '/hmi/display/raw'],
@@ -131,7 +131,7 @@ def generate_launch_description():
         arguments=[
             [namespace, '/hmi/buttons' +
              '@std_msgs/msg/Int32' +
-             '[ignition.msgs.Int32']
+             '[gz.msgs.Int32']
         ],
         remappings=[
             ([namespace, '/hmi/buttons'],
@@ -149,7 +149,7 @@ def generate_launch_description():
         arguments=[
             [namespace, '/hmi/led/' + led +
              '@std_msgs/msg/Int32' +
-             ']ignition.msgs.Int32'] for led in leds
+             ']gz.msgs.Int32'] for led in leds
         ],
         remappings=[
             ([namespace, '/hmi/led/' + led],
@@ -169,22 +169,22 @@ def generate_launch_description():
              '/model/', robot_name,
              '/link/oakd_rgb_camera_frame/sensor/rgbd_camera/image' +
              '@sensor_msgs/msg/Image' +
-             '[ignition.msgs.Image'],
+             '[gz.msgs.Image'],
             ['/world/', world,
              '/model/', robot_name,
              '/link/oakd_rgb_camera_frame/sensor/rgbd_camera/depth_image' +
              '@sensor_msgs/msg/Image' +
-             '[ignition.msgs.Image'],
+             '[gz.msgs.Image'],
             ['/world/', world,
              '/model/', robot_name,
              '/link/oakd_rgb_camera_frame/sensor/rgbd_camera/points' +
              '@sensor_msgs/msg/PointCloud2' +
-             '[ignition.msgs.PointCloudPacked'],
+             '[gz.msgs.PointCloudPacked'],
             ['/world/', world,
              '/model/', robot_name,
              '/link/oakd_rgb_camera_frame/sensor/rgbd_camera/camera_info' +
              '@sensor_msgs/msg/CameraInfo' +
-             '[ignition.msgs.CameraInfo'],
+             '[gz.msgs.CameraInfo'],
             ],
         remappings=[
             (['/world/', world,

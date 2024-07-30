@@ -192,7 +192,7 @@ def generate_launch_description():
             ]
         ),
 
-        # Create 3 Ignition nodes
+        # Create 3 Gazebo nodes
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([create3_gz_nodes_launch]),
             launch_arguments=[

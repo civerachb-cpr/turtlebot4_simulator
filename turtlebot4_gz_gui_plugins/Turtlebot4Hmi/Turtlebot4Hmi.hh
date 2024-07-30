@@ -50,7 +50,7 @@ public:
   Turtlebot4Hmi();
   /// \brief Destructor
   virtual ~Turtlebot4Hmi();
-  /// \brief Called by Ignition GUI when plugin is instantiated.
+  /// \brief Called by Gz GUI when plugin is instantiated.
   /// \param[in] _pluginElem XML configuration for this plugin.
   void LoadConfig(const tinyxml2::XMLElement * _pluginElem) override;
   // \brief Get the robot namespace as a string, for example

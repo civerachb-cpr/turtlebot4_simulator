@@ -58,7 +58,7 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory(
         'ros_gz_sim')
 
-     # Set Ignition resource path
+     # Set Gazebo resource path
     gz_resource_path = SetEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
         value=':'.join([
@@ -81,7 +81,7 @@ def generate_launch_description():
     gz_sim_launch = PathJoinSubstitution(
         [pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py'])
 
-    # Ignition gazebo
+    # Gazebo harmonic
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([gz_sim_launch]),
         launch_arguments=[
@@ -102,7 +102,7 @@ def generate_launch_description():
                         name='clock_bridge',
                         output='screen',
                         arguments=[
-                            '/clock' + '@rosgraph_msgs/msg/Clock' + '[ignition.msgs.Clock'
+                            '/clock' + '@rosgraph_msgs/msg/Clock' + '[gz.msgs.Clock'
                         ])
 
     # Create launch description and add actions

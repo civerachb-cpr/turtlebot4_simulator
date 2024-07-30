@@ -3,7 +3,7 @@
 <package format="3">
   <name>turtlebot4_gz_gui_plugins</name>
   <version>1.0.2</version>
-  <description>Turtlebot4 Ignition Simulator GUI Plugins</description>
+  <description>Turtlebot4 Gazebo Simulator GUI Plugins</description>
   <maintainer email="rkreinin@clearpathrobotics.com">rkreinin</maintainer>
   <license>Apache 2.0</license>
 

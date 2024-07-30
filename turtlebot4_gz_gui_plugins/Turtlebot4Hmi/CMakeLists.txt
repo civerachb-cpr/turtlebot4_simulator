@@ -16,7 +16,7 @@ find_package(Qt5
   REQUIRED
 )
 
-# Find the Ignition gui library
+# Find the Gz gui library
 find_package(gz-gui8 REQUIRED)
 find_package(gz-common5 REQUIRED)
 

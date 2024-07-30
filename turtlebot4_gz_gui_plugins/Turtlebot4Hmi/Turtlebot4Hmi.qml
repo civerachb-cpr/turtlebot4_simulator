@@ -394,7 +394,7 @@ Rectangle
         implicitHeight: 40
         opacity: 0.3
         border.color: "#000000"
-        border.width: control.down ? 2 : 1
+        border.width: 1
         radius: 20
         color: "gray"
       }
@@ -416,7 +416,7 @@ Rectangle
         implicitHeight: 40
         opacity: 0.3
         border.color: "#000000"
-        border.width: control.down ? 2 : 1
+        border.width: 1
         radius: 20
         color: "gray"
       }
@@ -438,7 +438,7 @@ Rectangle
         implicitHeight: 40
         opacity: 0.3
         border.color: "#000000"
-        border.width: control.down ? 2 : 1
+        border.width: 1
         radius: 20
         color: "gray"
       }
@@ -460,7 +460,7 @@ Rectangle
         implicitHeight: 40
         opacity: 0.3
         border.color: "#000000"
-        border.width: control.down ? 2 : 1
+        border.width: 1
         radius: 20
         color: "gray"
       }

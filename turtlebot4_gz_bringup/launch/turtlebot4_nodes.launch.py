@@ -54,7 +54,7 @@ def generate_launch_description():
         output='screen',
     )
 
-    # Turtlebot4 Ignition Hmi node
+    # Turtlebot4 Gazebo Hmi node
     turtlebot4_gz_hmi_node = Node(
         package='turtlebot4_gz_toolbox',
         name='turtlebot4_gz_hmi_node',
