@@ -77,7 +77,7 @@ def generate_launch_description():
     turtlebot4_ros_gz_bridge_launch = PathJoinSubstitution(
         [pkg_turtlebot4_gz_bringup, 'launch', 'ros_gz_bridge.launch.py'])
     rviz_launch = PathJoinSubstitution(
-        [pkg_turtlebot4_viz, 'launch', 'view_robot.launch.py'])
+        [pkg_turtlebot4_viz, 'launch', 'view_navigation.launch.py'])
     turtlebot4_node_launch = PathJoinSubstitution(
         [pkg_turtlebot4_gz_bringup, 'launch', 'turtlebot4_nodes.launch.py'])
     create3_nodes_launch = PathJoinSubstitution(
