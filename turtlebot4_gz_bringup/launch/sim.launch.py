@@ -58,7 +58,7 @@ def generate_launch_description():
     pkg_ros_gz_sim = get_package_share_directory(
         'ros_gz_sim')
 
-     # Set Gazebo resource path
+    # Set Gazebo resource path
     gz_resource_path = SetEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
         value=':'.join([
@@ -71,7 +71,7 @@ def generate_launch_description():
 
     gz_gui_plugin_path = SetEnvironmentVariable(
         name='GZ_GUI_PLUGIN_PATH',
-        value=":".join([
+        value=':'.join([
             os.path.join(pkg_turtlebot4_gz_gui_plugins, 'lib'),
             os.path.join(pkg_irobot_create_gz_plugins, 'lib')
         ])
@@ -85,15 +85,18 @@ def generate_launch_description():
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([gz_sim_launch]),
         launch_arguments=[
-            ('gz_args', [LaunchConfiguration('world'),
-                          '.sdf',
-                          ' -v 4',
-                          ' --gui-config ',
-                          PathJoinSubstitution(
-                            [pkg_turtlebot4_gz_bringup,
-                             'gui',
-                             LaunchConfiguration('model'),
-                             'gui.config'])])
+            ('gz_args', [
+                LaunchConfiguration('world'),
+                '.sdf',
+                ' -v 4',
+                ' --gui-config ',
+                PathJoinSubstitution([
+                    pkg_turtlebot4_gz_bringup,
+                    'gui',
+                    LaunchConfiguration('model'),
+                    'gui.config'
+                ])
+            ])
         ]
     )
 
